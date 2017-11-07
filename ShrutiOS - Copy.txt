@@ -1,0 +1,71 @@
+
+ShrutiOS.bin:     file format elf32-i386
+
+
+Disassembly of section .text:
+
+00100000 <_start-0x24>:
+  100000:	02 b0 ad 1b 03 00    	add    dh,BYTE PTR [eax+0x31bad]
+  100006:	00 00                	add    BYTE PTR [eax],al
+  100008:	fb                   	sti    
+  100009:	4f                   	dec    edi
+  10000a:	52                   	push   edx
+  10000b:	e4 00                	in     al,0x0
+	...
+
+00100024 <_start>:
+  100024:	53                   	push   ebx
+  100025:	e8 06 00 00 00       	call   100030 <kernel_start>
+  10002a:	fa                   	cli    
+  10002b:	f4                   	hlt    
+  10002c:	eb fd                	jmp    10002b <_start+0x7>
+  10002e:	66 90                	xchg   ax,ax
+
+00100030 <kernel_start>:
+  100030:	b8 84 42 00 00       	mov    eax,0x4284
+  100035:	f4                   	hlt    
+  100036:	c3                   	ret    
+
+Disassembly of section .eh_frame:
+
+00100038 <.eh_frame>:
+  100038:	14 00                	adc    al,0x0
+  10003a:	00 00                	add    BYTE PTR [eax],al
+  10003c:	00 00                	add    BYTE PTR [eax],al
+  10003e:	00 00                	add    BYTE PTR [eax],al
+  100040:	01 7a 52             	add    DWORD PTR [edx+0x52],edi
+  100043:	00 01                	add    BYTE PTR [ecx],al
+  100045:	7c 08                	jl     10004f <kernel_start+0x1f>
+  100047:	01 1b                	add    DWORD PTR [ebx],ebx
+  100049:	0c 04                	or     al,0x4
+  10004b:	04 88                	add    al,0x88
+  10004d:	01 00                	add    DWORD PTR [eax],eax
+  10004f:	00 10                	add    BYTE PTR [eax],dl
+  100051:	00 00                	add    BYTE PTR [eax],al
+  100053:	00 1c 00             	add    BYTE PTR [eax+eax*1],bl
+  100056:	00 00                	add    BYTE PTR [eax],al
+  100058:	d8 ff                	fdivr  st,st(7)
+  10005a:	ff                   	(bad)  
+  10005b:	ff 07                	inc    DWORD PTR [edi]
+  10005d:	00 00                	add    BYTE PTR [eax],al
+  10005f:	00 00                	add    BYTE PTR [eax],al
+  100061:	00 00                	add    BYTE PTR [eax],al
+	...
+
+Disassembly of section .bss:
+
+00101000 <stack_bottom>:
+	...
+
+Disassembly of section .comment:
+
+00000000 <.comment>:
+   0:	47                   	inc    edi
+   1:	43                   	inc    ebx
+   2:	43                   	inc    ebx
+   3:	3a 20                	cmp    ah,BYTE PTR [eax]
+   5:	28 47 4e             	sub    BYTE PTR [edi+0x4e],al
+   8:	55                   	push   ebp
+   9:	29 20                	sub    DWORD PTR [eax],esp
+   b:	36 2e 31 2e          	ss xor DWORD PTR cs:[esi],ebp
+   f:	30 00                	xor    BYTE PTR [eax],al

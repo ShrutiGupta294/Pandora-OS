@@ -1,0 +1,22 @@
+#include "stdio.c" 
+#include "string.c"
+#include "sys.c"
+
+#include "acpi/acpi.c"
+#include "apic/apic.c"
+#include "apic/lapic.c"
+#include "apic/ioapic.c"
+#include "cpu/cpu.c"
+#include "cpu/cpuid.c"
+#include "Descriptors/descriptor_tables.c"
+#include "MemManagement/mem.c"
+#include "MemManagement/paging.c"
+#include "Shell/Shell.c"
+
+#include "Drivers/Timers/timer.c"
+#include "Drivers/Timers/cmos.c"
+#include "Drivers/Keyboard/Keyboard.c"
+
+#include "MultiTasking/thread.c"
+#include "MultiTasking/tasking.c"
+#include "MultiTasking/Scheduler.c"
